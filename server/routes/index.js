@@ -1,6 +1,7 @@
 import express from 'express';
 import userRoutes from './user';
 import authRoutes from './auth';
+import productRoutes from './product';
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -14,5 +15,7 @@ router.use('/users', userRoutes);
 
 // mount auth routes at /auth
 router.use('/auth', authRoutes);
+
+router.use('/products', productRoutes);
 
 export default router;

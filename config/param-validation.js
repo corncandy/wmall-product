@@ -20,6 +20,29 @@ export default {
     }
   },
 
+  // POST /api/products
+  createProduct: {
+    body: {
+      name: Joi.string().required(),
+      description: Joi.string().required(),
+      price: Joi.number().required(),
+      picture: Joi.string().required()
+    }
+  },
+
+  // UPDATE /api/products/:productId
+  updateProduct: {
+    body: {
+      name: Joi.string().required(),
+      description: Joi.string().required(),
+      price: Joi.number().required(),
+      picture: Joi.string().required()
+    },
+    params: {
+      productId: Joi.string().hex().required()
+    }
+  },
+
   // POST /api/auth/login
   login: {
     body: {
